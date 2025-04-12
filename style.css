@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+body {
+  font-family: Nunito;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-family: Segoe UI;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.nav .r1 {
+  font-size: 175%;
+  font-weight: bolder;
+}
+
+.nav .r3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.about .t1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.experiance {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.experiance .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.experiance .c2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.experiance .c2 .title-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.experiance .c2 .title-content .title {
+  font-weight: bold;
+  font-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.experiance .c2 .title-content .date {
+  font-size: 13px;
+}
+
+.experiance .c2 .exp-content {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding: 15px 0;
+}
+
+.experiance .c2 .exp-content .e1 .t1 {
+  border-bottom: 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 85%;
+}
+
+.experiance .c2 .exp-content .e1 .t1 .tt1 {
+  font-weight: bold;
+}
+
+.experiance .c2 .exp-content .e1 .t2 {
+  font-size: 85%;
+}
+
+.Qualification {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.Qualification .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.Qualification .c2 .block1 {
+  padding-left: 25px;
+}
+
+.Qualification .c2 .block1 li {
+  font-weight: bold;
+}
+
+.Qualification .c2 .block1 .txt {
+  padding-left: 25px;
+  font-size: 92%;
+}
+
+.techSkill {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.techSkill .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.techSkill .c2 .block1 .c3 {
+  font-weight: 500;
+  border-bottom: 1.5px solid;
+}
+
+.cert {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.cert .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.cert .c2 {
+  padding: 10px 25px;
+}
+
+.cert .c2 li span {
+  padding: 25px;
+}
+
+.strength {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.strength .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.strength .c2 {
+  padding-left: 30px;
+}
+
+.declaration {
+  width: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 120%;
+}
+
+.declaration .c1 {
+  font-weight: bold;
+  border-bottom: 3px solid;
+}
+
+.declaration .c2 {
+  padding-left: 30px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .about, .experiance, .Qualification, .techSkill, .cert, .strength, .declaration {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .about, .experiance, .Qualification, .techSkill, .cert, .strength, .declaration {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .about, .experiance, .Qualification, .techSkill, .cert, .strength, .declaration {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .experiance .c2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .Qualification .c2 .block1 {
+    padding-left: 0px;
+  }
+  .Qualification .c2 .block1 .txt {
+    margin-left: 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body{
+    font-family: Nunito;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-family: Segoe UI;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  font-size: 15px;
+  padding: 10px 0;
+  //color: white;
+// background-color: black;
+
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid ;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    .r1{
+        font-size: 175%;
+        font-weight: bolder ;
+    }
+    .r2{
+
+    }
+    .r3{
+        display: flex;
+    
+    }
+}
+.about{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .t1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+
+    }
+}
+.experiance{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+
+    }
+    .c2{
+        display: flex   ;
+        justify-content: center;
+        align-items: center;
+        .title-content{
+            display: flex;
+            flex-direction: column;
+            flex:2;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .title{
+                font-weight: bold;
+                font-size: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .date{
+                font-size: 13px;
+            }
+        }
+        .exp-content{
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding:15px 0;
+            .e1{
+                .t1{
+                    border-bottom: 1px solid ;
+                    display: flex;
+                     font-size: 85%;
+                    .tt1{
+                        font-weight: bold;
+                    }
+                    .tt2{
+
+                    }
+                }
+                .t2{
+                    font-size: 85%;
+                }
+            }
+        }
+    }
+}
+
+.Qualification{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+
+    }
+    .c2{
+        .block1{
+            padding-left: 25px;
+            li{
+                font-weight: bold;
+            }
+            .txt{
+                padding-left: 25px;
+                font-size: 92%;
+            }
+        }
+    }
+   
+}
+
+.techSkill{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+
+    }
+    .c2{
+        .block1{
+          .c3{
+            font-weight: 500;
+        border-bottom: 1.5px solid ;
+          }
+        }
+    }
+   
+}
+
+.cert{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+    }
+    .c2{
+        padding: 10px 25px;
+        li{
+            span{
+                padding: 25px;
+            }
+        }
+    }
+}
+.strength{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+    }
+    .c2{
+        padding-left: 30px;
+    }
+}
+
+.declaration{
+    width: 65%;
+    height: fit-content;
+    //border: 1px solid ;
+    font-size: 120%;
+    .c1{
+        font-weight: bold;
+        border-bottom: 3px solid ;
+    }
+    .c2{
+        padding-left: 30px;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+   .about,.experiance,.Qualification,.techSkill,.cert,.strength,.declaration{
+    width: 80%;
+   }
+}
+
+@media only screen and (max-width:1000px) {
+    .about,.experiance,.Qualification,.techSkill,.cert,.strength,.declaration{
+     width: 90%;
+    }
+ }
+
+ @media only screen and (max-width:700px) {
+    .about,.experiance,.Qualification,.techSkill,.cert,.strength,.declaration{
+     width: 95%;
+    }
+ }
+ @media only screen and (max-width:700px) {
+    // .about,.experiance,.Qualification,.techSkill,.cert,.strength,.declaration{
+    //  width: 95%;
+    // }
+    
+    .experiance{
+        .c2{
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        }
+    }
+    .Qualification{
+        .c2{
+           .block1{
+            padding-left: 0px;
+            .txt{
+                margin-left: 0px;
+            }
+           }
+        }
+    }
+ }

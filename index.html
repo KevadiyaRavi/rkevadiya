@@ -1,211 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
+// Main Application JavaScript
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Kevadiya</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet">
-</head>
+// Create floating particles
+function createFloatingParticles() {
+  const particlesContainer = document.getElementById("particles");
+  if (!particlesContainer) return;
 
-<body>
-    <div class="nav">
-        <div class="r1">Ravi Kevadiya</div>
-        <div class="r2">Electrical Engineer</div>
-        <div class="r3">
-            <div class="r4">Surat, Gujarat | </div>
-            <div class="r5">+91 9904468980 | </div>
-            <div class="r6">3rd July, 1998</div>
-        </div>
-        <div class="r7">kevadiyaravi87@gmail.com</div>
-    </div>
-    <div class="about">
-        <div class="t1">About</div>
-        <ul>
-            <li>
-                 I am an Electrical Engineer with 4 years of experience in power systems, specializing in 220kV, 33kV,
-                6.6kV, and 415V voltage levels. My expertise spans across 220kV AIS and GIS substations, including
-                protection, automation, and control systems.
-                I have hands-on experience in SCADA systems, IEC 61850 communication protocols, and relay coordination,
-                working with DIGSI 4 & 5, PCM 600, and various protection relays. Additionally, I have been involved in
-                the control system of 175MVAr Static Var Compensators (SVCs), utilizing Siemens S7 PLC, TIA Portal, and
-                ABB AC800PEC control systems.
-            </li>
-            <li>
-                My skill set includes: <br>
-                - Substation Automation & Protection (Relay coordination, SCADA, IEC 61850) <br>
-                - SVC Control Systems (Siemens & ABB platforms) <br>
-                - Fault Analysis & Troubleshooting (Breaker maintenance, protection relay testing) <br>
-                - Project Execution & System Upgrades
-                
-            </li>
-        </ul>
-    </div>
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement("div");
+    particle.className = "floating-particle";
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.top = Math.random() * 100 + "%";
+    particle.style.animationDelay = Math.random() * 2 + "s";
+    particle.style.animationDuration = 3 + Math.random() * 2 + "s";
+    particlesContainer.appendChild(particle);
+  }
+}
 
+// Intersection Observer for scroll animations
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
 
-    <div class="experiance">
-        <div class="c1">Experience</div>
-        <div class="c2">
-            <div class="title-content">
-                <div class="title">
-                    AMNS India <br> PVT Ltd
-                </div>
-                <div class="date">
-                    Since Oct,2020
-                </div>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with fade-in-view class
+  document.querySelectorAll(".fade-in-view").forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+// Create skill bars
+function createSkillBars() {
+  const coreSkills = [
+    { name: "Circuit Analysis", level: 100, icon: "circuit" },
+    { name: "Problem Solving", level: 100, icon: "settings" },
+    { name: "Troubleshooting during Fault", level: 90, icon: "activity" },
+    {
+      name: "Relay Coordination and Setting Calculation",
+      level: 93,
+      icon: "shield",
+    },
+    { name: "Decision Making during fault condition", level: 95, icon: "zap" },
+    { name: "Single Line Diagram Understanding", level: 100, icon: "code" },
+  ];
+
+  const programmingSkills = [
+    { name: "C/C++", level: 75 },
+    { name: "Python", level: 70 },
+    { name: "PLC Programming (STL, FBD, Ladder)", level: 95 },
+    { name: "HTML/CSS/JavaScript", level: 65 },
+    { name: "Nodejs", level: 65 },
+  ];
+
+  const coreSkillsContainer = document.getElementById("coreSkills");
+  const programmingSkillsContainer =
+    document.getElementById("programmingSkills");
+
+  // Create core skills
+  coreSkills.forEach((skill, index) => {
+    const skillCard = document.createElement("div");
+    skillCard.className = "card skill-item fade-in-view";
+    skillCard.style.animationDelay = index * 0.1 + "s";
+
+    skillCard.innerHTML = `
+            <div class="skill-header">
+                <svg class="icon" viewBox="0 0 24 24" style="color: #60a5fa;">
+                    ${getIconPath(skill.icon)}
+                </svg>
+                <span class="skill-name">${skill.name}</span>
+                <span class="skill-percentage">${skill.level}%</span>
             </div>
-
-            <div class="exp-content">
-                <div class="e1">
-                    <div class="t1">
-                        <div class="tt1">Assistant Manager</div>
-                        <div class="tt2">- O&M Manager</div>
-                    </div>
-                    <div class="t2">
-                        <li>220kV AIS and GIS Switchgear, Substation Automation, Relays and EMS</li>
-                        <li>33kV/6.6kV/415V Switchgear and Distribution</li>
-                        <li> SVCs (Static VAR Compensator) for Electric ARC Furnaces- ABB and Siemens up to 175MVAR</li>
-                        <li> Automation System with Siemens S7 PLCs, ABB AC800 PEC controller</li>
-                        <li> Software: Simatic WinCC, DIGSI 4 and 5, HITACHI PCM600, Schneider PME, TIA Portal with
-                            Step7, AutoCAD, ETAP</li>
-
-                    </div>
-                </div>
-                <div class="e1">
-                    <div class="t1">
-                        <div class="tt1">Projects</div>
-                    </div>
-                    <div class="t2">
-                        <li>220kV AIS to GIS project with Siemens make GIS which includes switchgear commissioning,
-                            equipment testing, Relay coordination and testing, SCADA network and testing</li>
-                        <li>New 160MVA T&R transformer commissioning, testing and charging</li>
-                        <li>PLC based annunciator for breakers and cooling system status with WinCC</li>
-                        <li>SVC Control system upgradation from Siemens to ABB HPR system (ABB AC800 PEC controller and
-                            Flex module for Thyristor firing)</li>
-                        <li>Relay Coordination of AIS to GIS intermediate connectivity using ETAP</li>
-
-                    </div>
-                </div>
+            <div class="skill-bar-bg">
+                <div class="skill-bar" style="width: ${skill.level}%"></div>
             </div>
+        `;
 
-        </div>
-    </div>
+    coreSkillsContainer.appendChild(skillCard);
+  });
 
+  // Create programming skills
+  programmingSkills.forEach((skill, index) => {
+    const skillCard = document.createElement("div");
+    skillCard.className = "card skill-item fade-in-view";
+    skillCard.style.animationDelay = index * 0.1 + "s";
 
-
-    <div class="Qualification">
-        <div class="c1">Qualification</div>
-        <div class="c2">
-            <div class="block1">
-                <br>
-                <li>
-                    B.E In Electrical Engineering
-                </li>
-                <div class="txt">Faculty of Technology and Engineering, MSU Baroda</div>
-                <div class="txt">First Class with Distinction - 73.64%</div>
+    skillCard.innerHTML = `
+            <div class="skill-header">
+                <svg class="icon" viewBox="0 0 24 24" style="color: #60a5fa;">
+                    <polyline points="16 18 22 12 16 6" stroke="currentColor" fill="none" stroke-width="2"></polyline>
+                    <polyline points="8 6 2 12 8 18" stroke="currentColor" fill="none" stroke-width="2"></polyline>
+                </svg>
+                <span class="skill-name">${skill.name}</span>
+                <span class="skill-percentage">${skill.level}%</span>
             </div>
-            <div class="block1">
-                <br>
-                <li>
-                    Embedded Systems (C, C++)
-                </li>
-                <div class="txt"><b>Course by</b> Vector India PVT Ltd, Banglore</div>
+            <div class="skill-bar-bg">
+                <div class="skill-bar skill-bar-purple" style="width: ${skill.level}%"></div>
             </div>
-        </div>
-    </div>
+        `;
 
+    programmingSkillsContainer.appendChild(skillCard);
+  });
+}
 
-    <div class="techSkill">
-        <div class="c1">Technical Skills</div>
+// Get icon SVG path "
+function getIconPath(iconName) {
+  const icons = {
+    circuit:
+      '<rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" fill="none" stroke-width="2"></rect><rect x="9" y="9" width="6" height="6" stroke="currentColor" fill="none" stroke-width="2"></rect>',
+    settings:
+      '<circle cx="12" cy="12" r="3" stroke="currentColor" fill="none" stroke-width="2"></circle><path d="M12 1v6  12v6" stroke="currentColor" fill="none" stroke-width="2"></path>',
+    activity:
+      '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" fill="none" stroke-width="2"></polyline>',
+    shield:
+      '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" fill="none" stroke-width="2"></path>',
+    zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" fill="none" stroke-width="2"></polygon>',
+    code: '<polyline points="16 18 22 12 16 6" stroke="currentColor" fill="none" stroke-width="2"></polyline><polyline points="8 6 2 12 8 18" stroke="currentColor" fill="none" stroke-width="2"></polyline>',
+  };
+  return icons[iconName] || icons.zap;
+}
 
-        <div class="c2">
-            <div class="block1">
-                <div class="c3">
-                    Core Electrical Skills
-                </div>
-                <ul>
-                    <li>Circuit Analysis</li>
-                    <li>
-                        Problem Solving
-                    </li>
-                    <li>Troubleshooting during Fault</li>
-                    <li>
-                        Relay Coordination and Setting Calculation
-                    </li>
-                    <li>
-                        Decision Making during fault condition
-                    </li>
-                    <li>
-                        Single line diagram understanding
-                    </li>
-                </ul>
-            </div>
-            <div class="block1">
-                <div class="c3">
-                    Programming and Software Skills:
-                </div>
-                <ul>
-                    <li><b>Operating Systems:</b> Windows, Android</li>
-                    <li><b>Applications:</b> MS Excel, MS Word, MATLAB</li>
-                    <li><b>Tools: </b> GitHub Power Automat</li>
-                    <li><b>IDE:</b> Visual Studio Code, MATLAB</li>
-                    <li><b>Languages:</b> C/C++ (Intermediate), HTML(Basic), CSS(Basic), JavaScript(Basic), Python, PLC
-                        STL, FBD, Ladder</li>
-                    <li><b>Technical software:</b> WinCC, DIGSI4 and DIGSI5, HITACHI PCM600, ABB Control Builder, ETAP,
-                        AutoCAD, TIA Portal, Step7</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+// Create certifications
+function createCertifications() {
+  const certifications = [
+    {
+      title: "Google Kick Start 2022",
+      issuer: "Google",
+      details: "Round C - Rank: 9605 | Round D - Rank: 4888",
+    },
+    {
+      title: "Google Kick Start 2020",
+      issuer: "Google",
+      details: "Round D - Rank: 8252",
+    },
+    {
+      title: "TCS CodeVita 2022",
+      issuer: "TCS",
+      details: "Season 10 - Rank: 4193",
+    },
+    {
+      title: "Project Management Foundation",
+      issuer: "Arienace",
+      details: "Dr. Pramod Kumar",
+    },
+    {
+      title: "Embedded Systems (C, C++)",
+      issuer: "Vector India PVT Ltd",
+      details: "Bangalore",
+    },
+    {
+      title: "Internship Certification",
+      issuer: "Fast-track Inc.",
+      details: "Vadodara",
+    },
+  ];
 
-    <div class="cert">
-        <div class="c1">Certifications</div>
-        <div class="c2">
-            <li><b>1. Internship Certification </b><br>
-                <span>Fast-track Inc., Vadodara</span>
-            </li>
-            <li><b>2. Google Kick Start 2020 </b><br>
-                <span>(Round D, Rank:8252)</span>
-            </li>
-            <li><b>3. Google Kick Start 2022 </b><br>
-                <span>(Round C, Rank:9605)</span>
-            </li>
-            <li><b>4. Google Kick Start 2022 </b><br>
-                <span>(Round D, Rank: 4888)</span>
-            </li>
-            <li><b>5. TCS CodeVita 2022 </b><br>
-                <span>(Season 10, Rank:4193)</span>
-            </li>
-            <li><b>6. Project Management Foundation </b><br>
-                <span>( Arienace, Dr. Pramod Kumar)</span>
-            </li>
-        </div>
-    </div>
+  const certificationsContainer = document.getElementById("certifications");
 
-    <div class="strength">
-        <div class="c1">Strength</div>
-        <div class="c2">
-            I am a highly adaptable and fast learner who thrives in dynamic environments. I 
-quickly grasp new technologies, concepts, and challenges, aligning seamlessly with 
-evolving trends and innovations. My ability to learn rapidly and apply knowledge 
-effectively enables me to excel in problem-solving, automation, and system 
-integration, ensuring continuous growth and success in any field I pursue.
-        </div>
-    </div>
+  certifications.forEach((cert, index) => {
+    const certCard = document.createElement("div");
+    certCard.className = "card cert-card fade-in-view";
+    certCard.style.animationDelay = index * 0.1 + "s";
 
-    <div class="declaration">
-        <div class="c1">Declaration</div>
-        <div class="c2">
-            I hereby declare that all the details mentioned above are in accordance with the truth and fact as per my 
-knowledge and I hold the responsibility for the correctness of the above-mentioned particulars. 
-        </div>
-    </div>
-</body>
+    certCard.innerHTML = `
+            <svg class="icon-lg" viewBox="0 0 24 24" style="color: #60a5fa; margin-bottom: 1rem;">
+                <circle cx="12" cy="8" r="7" stroke="currentColor" fill="none" stroke-width="2"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" stroke="currentColor" fill="none" stroke-width="2"></polyline>
+            </svg>
+            <h3 style="color: #e2e8f0; margin-bottom: 0.5rem; font-size: 1.125rem;">${cert.title}</h3>
+            <p style="color: #60a5fa; font-size: 0.875rem; margin-bottom: 0.25rem;">${cert.issuer}</p>
+            <p style="color: #94a3b8; font-size: 0.75rem;">${cert.details}</p>
+        `;
 
-</html>
+    certificationsContainer.appendChild(certCard);
+  });
+}
+
+// Smooth scroll for anchor links
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href !== "#") {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    });
+  });
+}
+
+// Initialize everything when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  createFloatingParticles();
+  createSkillBars();
+  createCertifications();
+  initScrollAnimations();
+  initSmoothScroll();
+
+  // Add a small delay before showing scroll animations
+  setTimeout(() => {
+    initScrollAnimations();
+  }, 100);
+});
+
+// Add parallax effect to background
+window.addEventListener("scroll", function () {
+  const scrolled = window.pageYOffset;
+  const particles = document.getElementById("particles");
+  if (particles) {
+    particles.style.transform = `translateY(${scrolled * 0.3}px)`;
+  }
+});
